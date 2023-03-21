@@ -3,6 +3,14 @@ require 'rails_helper'
 describe CongressService do
   context "class methods" do
     context "#members_by_state" do
+
+      # before(:each) do
+      #   json_response = File.read('spec/fixtures/members_of_the_house.json')
+
+      #   stub_request(:get, "https://api.propublica.org/congress/v1/members/house/CO/current.json")
+      #     .to_return(status: 200, body: json_response)
+      # end
+
       it "returns member data" do
         search = CongressService.new.members_by_state("CO")
         expect(search).to be_a Hash

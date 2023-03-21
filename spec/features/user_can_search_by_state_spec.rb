@@ -1,7 +1,15 @@
 require 'rails_helper'
 
 feature "user can search for house members" do
-  scenario "user submits valid state name" do
+
+  # before(:each) do
+  #   json_response = File.read('spec/fixtures/members_of_the_house.json')
+
+  #   stub_request(:get, "https://api.propublica.org/congress/v1/members/house/CO/current.json")
+  #     .to_return(status: 200, body: json_response)
+  # end
+
+  scenario "user submits valid state name,", :vcr do
     # As a user
     # When I visit "/"
     visit '/'
